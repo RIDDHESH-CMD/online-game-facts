@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Game Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Game Fact</h1>
+        <p id="fact"></p>
+        <button id="nextFact">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "The first online game, MUD1, was created in 1978.",
+                "year": 1978
+            },
+            {
+                "fact": "As of 2021, there are over 2.7 billion gamers worldwide.",
+                "year": 2021
+            },
+            {
+                "fact": "The global online gaming market is expected to reach $200 billion by 2023.",
+                "year": 2023
+            },
+            {
+                "fact": "Esports, competitive online gaming, has become a billion-dollar industry.",
+                "year": 2021
+            },
+            {
+                "fact": "The most popular online game genre is action, followed by shooter and role-playing games.",
+                "year": 2021
+            },
+            {
+                "fact": "Fortnite, a battle royale game, generated over $9 billion in revenue in its first two years.",
+                "year": 2018
+            },
+            {
+                "fact": "Online gaming can improve cognitive skills such as problem-solving and multitasking.",
+                "year": 2021
+            },
+            {
+                "fact": "The average age of an online gamer is around 34 years old.",
+                "year": 2021
+            },
+            {
+                "fact": "Mobile gaming accounts for over 50% of the total gaming market.",
+                "year": 2021
+            },
+            {
+                "fact": "The first MMORPG (Massively Multiplayer Online Role-Playing Game), Meridian 59, was released in 1996.",
+                "year": 1996
+            }
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            const factElement = document.getElementById('fact');
+            factElement.textContent = facts[currentFactIndex].fact;
+        }
+
+        document.getElementById('nextFact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            displayFact();
+        });
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
